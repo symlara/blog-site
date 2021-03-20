@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaliyah's Blog Site</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+      <h1>
+        <a href="/">Aaliyah's Blog Site</a>
+      </h1>
+      <nav class="f6 fw6 ttu tracked">
+        {{#if loggedIn}}
+        <a class="link dim white dib mr3" href="/dashboard">Dashboard</a>
+        <button id="logout"  class="link dim white dib mr3">Logout</button>
+        {{else}}
+        <a class="link dim white dib mr3" href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Thanks for visiting my site!
+    </footer>
+  </div>
+  {{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
