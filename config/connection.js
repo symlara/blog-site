@@ -1,5 +1,5 @@
 // import sequalize 
-const sequalize = require('sequelize');
+const Sequalize = require('sequelize');
 
 require('dotenv').config();
 
