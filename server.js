@@ -1,6 +1,6 @@
 // express call, and sequalize call
 const express = require('express');
-// const routes = require('./controllers');
+const routes = require('./controllers');
 const sequalize = require('./config/connection');
 
 const session = require('express-session');
@@ -37,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // call routes
-app.use(require('./controllers'));
+app.use(routes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
