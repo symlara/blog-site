@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { IndexHints } = require('sequelize/types');
-const { User, Post, Comment } = require('../../models');
+const { User, Post, Comment } = require("../../models");
+
 
 // /api/users
 router.get('/', (req,res) => {
