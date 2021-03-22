@@ -1,50 +1,49 @@
-// express call, and sequalize call
-const express = require('express');
-const routes = require('./controllers');
-const sequalize = require('./config/connection');
-
-const session = require('express-session');
-const SequalizeStore = require('connect-session-sequelize')(session.Store);
-
-// handlebars
-const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
-
-// express middleware
 const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
 
+
+// App initiation
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const sess = {
     secret: process.env.SESSION_SECRET,
-    cookie: {
-        // counter on server responses
-        maxAge: 400 * 1000
-    },
+    cookie: {},
     resave: false,
-    rolling: false,
-    saveUnitialized: true,
-    store: new SequalizeStore({
-        db:sequalize
-    })
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+      })
 };
-
 app.use(session(sess));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const helpers = require('./utils/helpers');
 
-// call routes
-app.use(routes);
+const hbs = exphbs.create({ helpers });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
+// Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// start the server after connecting to the database
-sequalize.AsyncQueueError({ force: true }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+//turn on routes
+app.use(require('./controllers'));
+
+
+
+
+
+//turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+  

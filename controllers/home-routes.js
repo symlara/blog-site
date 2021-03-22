@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 });
 
 // get login
-router.get('/login', (res, res) => {
+router.get('/login', (req, res) => {
     console.log('test' + req.session);
 
     if (req.session.loggedIn) {

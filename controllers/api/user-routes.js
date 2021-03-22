@@ -69,7 +69,7 @@ router.post('/',  (req, res) => {
             req.session.loggedIn = true;
 
             // response in json
-            req.json(dbUserData);
+            res.json(dbUserData);
         });
     })
     .catch(err => {

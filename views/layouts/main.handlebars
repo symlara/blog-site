@@ -16,7 +16,7 @@
       </h1>
       <nav class="f6 fw6 ttu tracked">
         {{#if loggedIn}}
-        <a class="link dim white dib mr3" href="/dashboard">Dashboard</a>
+        <a href="href=/dashboard"<button type="button" id="dashboard" class="link dim white dib mr3">Dashboard</button></a>
         <button id="logout"  class="link dim white dib mr3">Logout</button>
         {{else}}
         <a class="link dim white dib mr3" href="/login">Login</a>
@@ -26,13 +26,12 @@
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting my site!
-    </footer>
   </div>
   {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>
-
+<footer class="bg-white">
+      Thanks for visiting my site!
+    </footer>
 </html>
