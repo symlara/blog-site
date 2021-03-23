@@ -6,33 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaliyah's Blog Site</title>
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body class="bg-silver">
   <div class="wrapper">
     <header>
-      <nav class="flex justify-between bb b--white-10">
-        <h1>
-        <a class="f1 pa3 link dib black dim mr3 mr4-ns" href="/">Aaliyah's Blog Site</a>
-      </h1>
-        {{#if loggedIn}}
-        <a class="f6 link dib white dim mr3 mr4-ns hover-white" href="/dashboard">dashboard</a>
-        <button id="logout" class="f6 link dib white dim mr3 mr4-ns">logout</button>
-        {{else}}
-        <a class="f4 link dib black dim mr3 mr4-ns flex items-center" href="/login">login</a>
-        {{/if}}
-      </nav>
+        <h1>Aaliyah's Blog Site</h1>
+        <nav class="pa2 bg-black">
+            {{#if loggedIn}}
+            {{!-- <a href="/" class="navbar-item is-hoverable pt0 f3">Home</a> --}}
+            {{!-- <a href="/dashboard" class="link dim white dib mr3">Dashboard</a> --}}
+            {{!-- <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a> --}}
+            <button id="logout" class="link dim black dib mr3">Logout</button>
+            {{else}}
+            <a href="/" class="link dim white dib mr3">Homepage</a>
+            <a href="/login" class="link dim white dib mr3">Login</a>
+            {{/if}}
+        </nav>
     </header>
     <main>
-      {{{ body }}}
-    </main >
-    <footer class="f3">
-      Thanks for visiting!
-    </footer>
+            {{{ body }}}
+    </main>
   </div>
-  {{#if loggedIn}}
+  
+
+
+{{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
+
 </body>
 
 </html>

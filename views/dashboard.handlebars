@@ -1,32 +1,22 @@
-<section class="bg-silver">
-  <h2 "f2 pa3 link dib black dim mr3 mr4-ns">Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
-
-
+  <section>
+  <div class="flex-between pa3">
+        <a href="/dashboard/create/"><button id="create-post" class="link dim black dib mr3">Create Post</button></a>
+        
+        <h2 class="title">Dashboard: Your Posts</h2><hr>
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
+    </div>
+
     {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
+        {{> post-info post}}
+        
+            <a href="/dashboard/edit/{{post.id}}"><button>Edit post</button></a>
+        </div>
     {{/each}}
-  </ol>
-</section>
+    </section>
+
+{{else}}
+<h6 class="f4">You currently have no posts</h6>
+
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>

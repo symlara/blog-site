@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest",
-    "db:seed": "./node_modules/.bin/db_seed"
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
