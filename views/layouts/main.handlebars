@@ -8,30 +8,31 @@
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
 </head>
 
-<body>
+<body class="bg-silver">
   <div class="wrapper">
-    <header class="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
-      <h1>
-        <a href="/">Aaliyah's Blog Site</a>
+    <header>
+      <nav class="flex justify-between bb b--white-10">
+        <h1>
+        <a class="f1 pa3 link dib black dim mr3 mr4-ns" href="/">Aaliyah's Blog Site</a>
       </h1>
-      <nav class="f6 fw6 ttu tracked">
         {{#if loggedIn}}
-        <a href="href=/dashboard"<button type="button" id="dashboard" class="link dim white dib mr3">Dashboard</button></a>
-        <button id="logout"  class="link dim white dib mr3">Logout</button>
+        <a class="f6 link dib white dim mr3 mr4-ns hover-white" href="/dashboard">dashboard</a>
+        <button id="logout" class="f6 link dib white dim mr3 mr4-ns">logout</button>
         {{else}}
-        <a class="link dim white dib mr3" href="/login">Login</a>
+        <a class="f4 link dib black dim mr3 mr4-ns flex items-center" href="/login">login</a>
         {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
-    </main>
+    </main >
+    <footer class="f3">
+      Thanks for visiting!
+    </footer>
   </div>
   {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>
-<footer class="bg-white">
-      Thanks for visiting my site!
-    </footer>
+
 </html>
