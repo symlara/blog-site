@@ -1,22 +1,18 @@
-  <section>
-  <div class="flex-between pa3">
-        <a href="/dashboard/create/"><button id="create-post" class="link dim black dib mr3">Create Post</button></a>
+ <div class="mb-5 pa3">
+        <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">Create Post</button></a>
         
-        <h2 class="title">Dashboard: Your Posts</h2><hr>
+        <h2 class="title pv1">Dashboard: Your Posts</h2>
 {{#if posts.length}}
     </div>
-
+<div class="pa3 bg-gray black">
     {{#each posts as |post|}}
         {{> post-info post}}
         
-            <a href="/dashboard/edit/{{post.id}}"><button>Edit post</button></a>
+            <a href="/dashboard/edit/{{post.id}}"><button class="button is-primary is-pulled-right link dim black dib mr3" id="edit-btn">Edit Post</button></a>
         </div>
     {{/each}}
-    </section>
 
 {{else}}
-<h6 class="f4">You currently have no posts</h6>
+<h6 class="pb-4 has-text-centered is-italic">You do not have any posts</h6>
 
 {{/if}}
-
-<script src="/javascript/add-post.js"></script>

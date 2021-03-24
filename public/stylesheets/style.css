@@ -15,5 +15,14 @@
     cursor: pointer;
 }
 
+#dashboard {
+    cursor: pointer;
+}
 
+#create {
+    cursor: pointer;
+}
 
+#edit-btn {
+    cursor: pointer;
+}
