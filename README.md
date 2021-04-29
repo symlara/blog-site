@@ -14,7 +14,7 @@ Once you've signed up or logged in as a user onto the site you can then add post
 * MYSQL
 * <a href="https://sequelize.org" target="_blank">Sequalize</a>
 * <a href="https://expressjs.com" target="_blank">Express</a>
-* <a href="https://www.npmjs.com/package/express-session" target="_blank">Express Seesion</a>
+* <a href="https://www.npmjs.com/package/express-session" target="_blank">Express Session</a>
 * <a href="https://handlebarsjs.com" target="_blank">Handlebars</a>
 * Connect Session Sequalize
 * <a href="https://jestjs.io" target="_blank">Jest</a>
