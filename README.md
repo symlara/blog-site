@@ -6,7 +6,7 @@ This is a personal blog site created with MySQl, Sequalize, Express, Express Ses
 
 ## Usage
 Here's a link to my deployed application using Heroku:
-<a href="https://arcane-meadow-70375.herokuapp.com">Blog Site</a>
+<a href="https://arcane-meadow-70375.herokuapp.com" target="_blank" rel="noopener noreferrer">Blog Site</a>
 
 Once you've signed up or logged in as a user onto the site you can then add posts, comments , and even delete your own post from the site if you no longer want it on the site.
 
